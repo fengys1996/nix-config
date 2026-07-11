@@ -1,0 +1,16 @@
+/* file location: ~/.config/wofi/style.css */
+window {
+	font-size: 20px;
+	font-family: 'MonaspiceKr Nerd Font';
+	background-color: rgba(50, 50, 50, 0.9);
+	color: white;
+}
+
+#entry:selected {
+	background-color: #bbccdd;
+	color: #333333;
+}
+
+#text:selected {
+	color: #333333;
+}
