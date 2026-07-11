@@ -10,7 +10,7 @@
   programs.neovim.withRuby = false;
   programs.neovim.withPython3 = false;
   
-  xdg.configFile."nvim".source = ./dot/nvim-config;
+  xdg.configFile."nvim".source = ./dot/nvim;
 
   wayland.windowManager.sway.enable = true;
   xdg.configFile."sway".source = ./dot/sway;
