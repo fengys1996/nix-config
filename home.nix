@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   home.username = "fys";
@@ -6,11 +6,18 @@
 
   home.stateVersion = "25.05";
 
-  programs.neovim.enable = true;
-  programs.neovim.withRuby = false;
-  programs.neovim.withPython3 = false;
-  
-  xdg.configFile."nvim".source = ./dot/nvim;
+  home.activation.bootstrapNvimConfig = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    set -e
+
+    nvim_dir="${config.home.homeDirectory}/.config/nvim"
+
+    if [ ! -e "$nvim_dir" ] && [ ! -L "$nvim_dir" ]; then
+      mkdir -p "$(dirname "$nvim_dir")"
+      ${pkgs.git}/bin/git clone https://github.com/fengys1996/nvim-config.git "$nvim_dir"
+    else
+      echo "Neovim config already exists, skipping bootstrap: $nvim_dir"
+    fi
+  '';
 
   wayland.windowManager.sway.enable = true;
   xdg.configFile."sway".source = ./dot/sway;
@@ -43,6 +50,7 @@
   };
   
   home.packages = with pkgs; [
+    neovim
     mold
     clang
     protobuf
@@ -59,5 +67,6 @@
     wofi
     codex
     unzip
+    yazi
   ];
 }
