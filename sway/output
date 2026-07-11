@@ -1,0 +1,52 @@
+# You can get a list of output names and additional information using the command: 
+# `swaymsg -t get_outputs`
+
+set $output_1 "Dell Inc. DELL U2723QE 6S0LL04"
+set $output_2 "Philips Consumer Electronics Company PHL 27E1N5900 UK82221004040"
+set $output_3 "Samsung Electric Company C27F390 H4ZM505964"
+
+output "Dell Inc. DELL U2723QE 6S0LL04" {
+    scale 1
+    transform 0
+}
+
+output "Philips Consumer Electronics Company PHL 27E1N5900 UK82221004040" {
+    scale 1.5
+    transform 0
+}
+
+output "Samsung Electric Company C27F390 H4ZM505964" {
+    scale 1
+    transform 0
+}
+
+set $ws1 "1:brower"
+set $ws2 "2:nvim"
+set $ws3 "3:term"
+set $ws4 "4:other"
+set $ws9 "9:other"
+set $ws10 "10:note"
+
+# Switch to workspace.
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# Which workspace to output to.
+workspace $ws1  output $output_1
+workspace $ws2  output $output_1
+workspace $ws3  output $output_1
+workspace $ws4  output $output_1
+workspace $ws9  output $output_2
+workspace $ws10 output $output_2
+
+# Move focused container to workspace.
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
