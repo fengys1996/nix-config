@@ -1,0 +1,53 @@
+[colors.cursor]
+cursor = "0x808080"
+text = "0xffffff"
+
+[font]
+size = 16
+
+[font.offset]
+x = 0
+y = 8
+
+[font.glyph_offset]
+x = 0
+y = 3
+
+[font.normal]
+# Options:
+family = "MonaspiceKr Nerd Font"
+style = "regular"
+
+[font.bold]
+style = "regular"
+
+[font.italic]
+style = "italic"
+
+[font.bold_italic]
+style = "italic"
+
+[terminal.shell]
+program = "fish"
+
+[window]
+# opacity = 0.9
+dynamic_padding = true
+
+[scrolling]
+history = 10000
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+# hide_when_typing = true
+
+[general]
+
+live_config_reload = true
+import = [
+    ~/.config/alacritty/themes/themes/everforest_dark.toml"
+]
+
+[terminal]
