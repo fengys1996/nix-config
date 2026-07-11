@@ -69,5 +69,6 @@
     codex
     unzip
     yazi
+    zoxide
   ];
 }
