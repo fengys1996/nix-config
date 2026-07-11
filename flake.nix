@@ -13,7 +13,7 @@
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/destop/configuration.nix
+          ./configuration.nix
           home-manager.nixosModules.default
           {
             home-manager.users.fys = import ./home.nix;

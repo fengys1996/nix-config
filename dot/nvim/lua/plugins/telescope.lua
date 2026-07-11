@@ -1,0 +1,144 @@
+local tele_shortcut_key = {
+    { "<leader>fh", "<cmd>lua require('telescope.builtin').pickers()<cr>" },
+
+    { "<C-f>",      "<cmd>lua require('telescope.builtin').find_files()<cr>" },
+    { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>" },
+
+    { "<C-p>",      "<cmd>lua require('telescope.builtin').live_grep()<cr>" },
+    { "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>" },
+
+    { "<C-b>",      "<cmd>lua require('telescope.builtin').buffers()<cr>" },
+    { "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>" },
+
+    { "<C-e>",      "<cmd>lua require('telescope.builtin').oldfiles()<cr>" },
+    { "<leader>fe", "<cmd>lua require('telescope.builtin').oldfiles()<cr>" },
+    { "<leader>fj", "<cmd>lua require('telescope.builtin').jumplist()<cr>" },
+    { "<leader>fs", "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>" },
+    { "<leader>m",  "<cmd>lua require('telescope.builtin').marks()<cr>" },
+
+    { "<leader>fd", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>" },
+    { "<C-e>",      "<cmd>lua require('telescope.builtin').oldfiles()<cr>" },
+
+    { "<C-t>",      "<cmd>Telescope tabs tabs<cr>" },
+    { "<leader>rU", "<cmd>Telescope rust_runnables<cr>" },
+}
+
+local make_tele_key_map = function(actions)
+    local keymap = {
+        i = {
+            -- close search window
+            ["<C-c>"] = actions.close,
+
+            -- select vertical and horizontal
+            ["<C-v>"] = actions.select_vertical,
+            ["<C-h>"] = actions.select_horizontal,
+
+            -- history record
+            ["<C-n>"] = actions.cycle_history_next,
+            ["<C-p>"] = actions.cycle_history_prev,
+
+            -- moving up and down
+            ["<C-j>"] = actions.move_selection_next,
+            ["<C-k>"] = actions.move_selection_previous,
+
+            -- preview window moves up and down
+            ["<C-u>"] = actions.preview_scrolling_up,
+            ["<C-d>"] = actions.preview_scrolling_down,
+
+            -- remove buffer
+            ["<C-r>"] = actions.delete_buffer + actions.move_to_top,
+
+            ["<Cs-v>"] = { "<C-r>+", type = "command" },
+        },
+        n = {
+            -- remove buffer
+            ["r"] = actions.delete_buffer + actions.move_to_top,
+        }
+    }
+
+    return keymap
+end
+
+local load_fzf_native = function()
+    local ok, msg = pcall(require("telescope").load_extension, "fzf")
+    if not ok then
+        local err_msg = "failed to load fzf native, details: " .. msg
+        vim.notify(err_msg, vim.log.levels.ERROR)
+        return
+    end
+end
+
+local function load_extension(name)
+    local ok, msg = pcall(require("telescope").load_extension, name)
+    if not ok then
+        vim.notify("failed to load telescope extension '" .. name .. "', details: " .. msg, vim.log.levels.ERROR)
+    end
+end
+
+local tele_config = function()
+    local actions = require "telescope.actions"
+
+    local keymap = make_tele_key_map(actions)
+
+    local tele_opts = {
+        defaults = {
+            initial_mode = "insert",
+            mappings = keymap,
+            cache_picker = {
+                num_pickers = -1,
+                limit_entries = 100,
+            },
+        },
+        pickers = {
+            -- optional themes: dropdown, cursor, ivy
+            find_files = {
+                theme = "ivy",
+            },
+            live_grep = {
+                theme = "ivy",
+            },
+            oldfiles = {
+                cwd_only = true,
+            }
+        },
+        extensions = {
+            tabs = {},
+            rust_runnables = {},
+        }
+    };
+
+
+    require("telescope").setup(tele_opts)
+    load_fzf_native()
+    load_extension("rust_runnables")
+    load_extension("tabs")
+
+    vim.api.nvim_create_user_command(
+        "Tl",
+        function(opts)
+            vim.cmd("Telescope " .. opts.args)
+        end,
+        {
+            nargs = "*",
+            complete = function(_, _)
+                return vim.fn.getcompletion("Telescope ", "cmdline")
+            end,
+        }
+    )
+end
+
+return {
+    {
+        "nvim-telescope/telescope.nvim",
+        tag = 'v0.2.1',
+        dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-fzf-native.nvim" },
+        keys = tele_shortcut_key,
+        config = tele_config,
+    },
+    -- Install native telescope sorter to significantly improve sorting performance.
+    -- Note: if in freebsd, you should use gmake to build it.
+    {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = 'make'
+    }
+}

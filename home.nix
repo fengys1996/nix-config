@@ -10,7 +10,7 @@
   programs.neovim.withRuby = false;
   programs.neovim.withPython3 = false;
   
-  xdg.configFile."nvim".source = ./nvim-config;
+  xdg.configFile."nvim".source = ./dot/nvim-config;
 
   wayland.windowManager.sway.enable = true;
   xdg.configFile."sway".source = ./dot/sway;
@@ -36,6 +36,12 @@
     };
   };
   
+  home.sessionVariables = {
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
+  };
+  
   home.packages = with pkgs; [
     mold
     clang
@@ -51,5 +57,7 @@
     htop
     btop
     wofi
+    codex
+    unzip
   ];
 }
