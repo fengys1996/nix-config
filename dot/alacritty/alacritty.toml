@@ -3,7 +3,7 @@ cursor = "0x808080"
 text = "0xffffff"
 
 [font]
-size = 16
+size = 12
 
 [font.offset]
 x = 0
