@@ -19,6 +19,8 @@
     fi
   '';
 
+  home.file.".config/bg/nixos-wallpapers.png".source = ./dot/bg/nixos-wallpapers.png;
+
   wayland.windowManager.sway.enable = true;
   xdg.configFile."sway".source = ./dot/sway;
   
@@ -58,6 +60,7 @@
     taplo
     curl
     ripgrep
+    fzf
     fd
     bat
     eza

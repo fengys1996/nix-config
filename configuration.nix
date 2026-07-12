@@ -44,6 +44,18 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+  
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+  
+    fcitx5.addons = with pkgs; [
+      qt6Packages.fcitx5-chinese-addons
+      qt6Packages.fcitx5-configtool
+      fcitx5-gtk
+      qt6Packages.fcitx5-qt
+    ];
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {

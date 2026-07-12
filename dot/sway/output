@@ -12,6 +12,7 @@ output "Dell Inc. DELL U2723QE 6S0LL04" {
 
 output "Philips Consumer Electronics Company PHL 27E1N5900 UK82221004040" {
     scale 1.5
+    bg ~/.config/bg/nixos-wallpapers.png fill
     transform 0
 }
 
@@ -20,12 +21,12 @@ output "Samsung Electric Company C27F390 H4ZM505964" {
     transform 0
 }
 
-set $ws1 "1:brower"
-set $ws2 "2:nvim"
-set $ws3 "3:term"
-set $ws4 "4:other"
-set $ws9 "9:other"
-set $ws10 "10:note"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws9 "9"
+set $ws10 "10"
 
 # Switch to workspace.
 bindsym $mod+1 workspace number $ws1
