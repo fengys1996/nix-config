@@ -1,6 +1,12 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
+  imports = [
+    # TODO: auto install rad
+    # TODO: add rad.toml config
+    ./services/rad.nix
+  ];
+  
   home.username = "fys";
   home.homeDirectory = "/home/fys";
 
@@ -8,9 +14,7 @@
 
   home.activation.bootstrapNvimConfig = lib.hm.dag.entryAfter ["writeBoundary"] ''
     set -e
-
     nvim_dir="${config.home.homeDirectory}/.config/nvim"
-
     if [ ! -e "$nvim_dir" ] && [ ! -L "$nvim_dir" ]; then
       mkdir -p "$(dirname "$nvim_dir")"
       ${pkgs.git}/bin/git clone https://github.com/fengys1996/nvim-config.git "$nvim_dir"
@@ -28,13 +32,15 @@
   
   xdg.configFile."./xkb/symbols/us_minila_r".source = ./dot/xkb/us_minila_r;
 
-  programs.fish.enable = true;
-  xdg.configFile."fish".source = ./dot/fish;
+  xdg.configFile."fish/config.fish".source = ./dot/fish/config.fish;
 
   programs.alacritty.enable = true;
   xdg.configFile."alacritty".source = ./dot/alacritty;
 
   xdg.configFile."wofi".source = ./dot/wofi;
+  
+  home.file.".local/share/nvim/site/parser/rust.so".source =
+    "${pkgs.tree-sitter-grammars.tree-sitter-rust}/parser";
 
   programs.git = {
     enable = true;
@@ -54,6 +60,9 @@
   };
   
   home.packages = with pkgs; [
+    gnumake
+    file
+    fish
     rustup
     neovim
     mold
@@ -75,5 +84,7 @@
     unzip
     yazi
     zoxide
+    tree-sitter
+    tree-sitter-grammars.tree-sitter-rust
   ];
 }

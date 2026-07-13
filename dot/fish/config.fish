@@ -13,6 +13,8 @@ if status is-interactive
 
     fish_vi_key_bindings
     
+    fish_add_path ~/.cargo/bin
+    
     if type -q zoxide
     	zoxide init fish --cmd cd | source
     end
