@@ -14,9 +14,8 @@ x = 0
 y = 3
 
 [font.normal]
-# Options:
 family = "MonaspiceKr Nerd Font"
-style = "regular"
+style = "light"
 
 [font.bold]
 style = "regular"
