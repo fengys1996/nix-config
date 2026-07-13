@@ -25,7 +25,14 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
+  
+  # If you want to run binaries from another platform, please install:
+  # ```
+  # docker run --privileged --rm tonistiigi/binfmt --install all
+  # ```
+  boot.binfmt.emulatedSystems = [
+    "aarch64-linux"
+  ];
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";

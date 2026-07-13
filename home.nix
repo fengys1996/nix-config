@@ -117,5 +117,6 @@
     nerd-fonts.monaspace
     lxgw-wenkai
     docker-compose
+    mariadb.client
   ];
 }
