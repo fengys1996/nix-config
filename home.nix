@@ -91,5 +91,6 @@
     grim
     slurp
     swappy
+    wl-clipboard
   ];
 }
