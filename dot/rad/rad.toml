@@ -1,0 +1,60 @@
+# LSP server path(Optional).
+#
+# If this is not set, rad will look for `rust-analyzer` in PATH. If set, this
+# should be an absolute path.
+#
+# This is useful when rad is started by systemd without a fully configured
+# PATH.
+#
+# For example:
+lsp_server_path = "/home/fys/.cargo/bin/rust-analyzer"
+
+# Extra directories to prepend to PATH when starting LSP servers(Optional).
+#
+# Each entry should be an absolute directory path. Entries are prepended in the
+# order listed here, before rad's existing PATH.
+#
+# This is useful when rad is started by systemd or launchd with a minimal PATH.
+# For example, rust-analyzer may fail to run cargo for flycheck unless Cargo's
+# bin directory is added here.
+#
+# For example:
+path_prepend = [
+  "/home/fys/.cargo/bin/",
+]
+
+# Instance idle timeout in seconds(Optional).
+#
+# If this is not set, rad will use 300 seconds. Instances will be shut down if
+# no client is attached within this period.
+#
+# For example:
+# instance_timeout = 300
+
+# Background garbage collection interval in seconds(Optional).
+#
+# If this is not set, rad will use 30 seconds. This is used to clean up expired
+# or unused instances.
+#
+# For example:
+# gc_interval = 30
+
+# Address for the daemon to listen on(Optional).
+#
+# If this is not set, rad will listen on 127.0.0.1:27631. The format is
+# [host, port].
+#
+# For example:
+# listen = ["127.0.0.1", 27631]
+
+# Per-project LSP server path overrides(Optional).
+#
+# If this is not set, each project will use the global lsp_server_path setting.
+# If set, lsp_server_path should be an absolute path.
+#
+# For example:
+[projects."/home/fys/projects/greptimedb"]
+lsp_server_path = "/home/fys/.local/share/nvim/mason/bin/rust-analyzer"
+
+[projects."/home/fys/projects/gt"]
+lsp_server_path = "/home/fys/.local/share/nvim/mason/bin/rust-analyzer"

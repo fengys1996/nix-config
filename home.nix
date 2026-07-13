@@ -28,9 +28,11 @@
   wayland.windowManager.sway.enable = true;
   xdg.configFile."sway".source = ./dot/sway;
 
-  xdg.configFile."fontconfig/fonts.conf".source = ./dot/linuxfont/font.conf;
+  xdg.configFile."fontconfig/fonts.conf".source = ./dot/linuxfont/fonts.conf;
   
   xdg.configFile."./xkb/symbols/us_minila_r".source = ./dot/xkb/us_minila_r;
+  
+  xdg.configFile."rad".source = ./dot/rad/rad.toml;
 
   xdg.configFile."fish/config.fish".source = ./dot/fish/config.fish;
 
