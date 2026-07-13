@@ -50,6 +50,7 @@
       settings = {
         "browser.display.use_document_fonts" = 0;
         "font.language.group" = "x-western";
+        "layout.css.devPixelsPerPx" = "1.5";
         "font.name.monospace.x-western" = "MonaspiceKr Nerd Font Mono";
         "font.name.monospace.zh-CN" = "LXGW WenKai Mono";
         "font.name.sans-serif.x-western" = "MonaspiceKr Nerd Font";
