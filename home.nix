@@ -11,7 +11,7 @@
   home.homeDirectory = "/home/fys";
 
   home.stateVersion = "25.05";
-
+  
   home.activation.bootstrapNvimConfig = lib.hm.dag.entryAfter ["writeBoundary"] ''
     set -e
     nvim_dir="${config.home.homeDirectory}/.config/nvim"
@@ -115,5 +115,6 @@
     wl-clipboard
     nerd-fonts.monaspace
     lxgw-wenkai
+    docker-compose
   ];
 }

@@ -67,7 +67,7 @@
   users.users."fys" = {
     isNormalUser = true;
     description = "fys";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [];
   };
 
@@ -90,6 +90,8 @@
   #   enableSSHSupport = true;
   # };
   programs.sway.enable = true;
+
+  virtualisation.docker.enable = true;
 
   # List services that you want to enable:
 
