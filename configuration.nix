@@ -90,12 +90,6 @@
   #   enableSSHSupport = true;
   # };
   programs.sway.enable = true;
-  programs.firefox.enable = true;
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.monaspace
-    lxgw-wenkai
-  ];
 
   # List services that you want to enable:
 

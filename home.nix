@@ -39,6 +39,27 @@
   programs.alacritty.enable = true;
   xdg.configFile."alacritty".source = ./dot/alacritty;
 
+  programs.firefox = {
+    enable = true;
+    configPath = ".mozilla/firefox";
+
+    profiles.default = {
+      id = 0;
+      isDefault = true;
+
+      settings = {
+        "browser.display.use_document_fonts" = 0;
+        "font.language.group" = "x-western";
+        "font.name.monospace.x-western" = "MonaspiceKr Nerd Font Mono";
+        "font.name.monospace.zh-CN" = "LXGW WenKai Mono";
+        "font.name.sans-serif.x-western" = "MonaspiceKr Nerd Font";
+        "font.name.sans-serif.zh-CN" = "LXGW WenKai Mono";
+        "font.name.serif.x-western" = "MonaspiceKr Nerd Font";
+        "font.name.serif.zh-CN" = "LXGW WenKai Mono";
+      };
+    };
+  };
+
   xdg.configFile."wofi".source = ./dot/wofi;
   
   home.file.".local/share/nvim/site/parser/rust.so".source =
@@ -92,5 +113,7 @@
     slurp
     swappy
     wl-clipboard
+    nerd-fonts.monaspace
+    lxgw-wenkai
   ];
 }
