@@ -86,5 +86,8 @@
     zoxide
     tree-sitter
     tree-sitter-grammars.tree-sitter-rust
+    grim
+    slurp
+    swappy
   ];
 }
