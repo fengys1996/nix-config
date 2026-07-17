@@ -32,7 +32,7 @@
   
   xdg.configFile."./xkb/symbols/us_minila_r".source = ./dot/xkb/us_minila_r;
   
-  xdg.configFile."rad".source = ./dot/rad/rad.toml;
+  xdg.configFile."rad".source = ./dot/rad;
 
   xdg.configFile."fish/config.fish".source = ./dot/fish/config.fish;
 
@@ -118,5 +118,6 @@
     lxgw-wenkai
     docker-compose
     mariadb.client
+    bcc
   ];
 }

@@ -7,7 +7,7 @@
 # PATH.
 #
 # For example:
-lsp_server_path = "/home/fys/.cargo/bin/rust-analyzer"
+lsp_server_path = "/home/fys/.local/bin/rust-analyzer"
 
 # Extra directories to prepend to PATH when starting LSP servers(Optional).
 #
@@ -54,7 +54,4 @@ path_prepend = [
 #
 # For example:
 [projects."/home/fys/projects/greptimedb"]
-lsp_server_path = "/home/fys/.local/share/nvim/mason/bin/rust-analyzer"
-
-[projects."/home/fys/projects/gt"]
 lsp_server_path = "/home/fys/.local/share/nvim/mason/bin/rust-analyzer"

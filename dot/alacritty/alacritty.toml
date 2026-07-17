@@ -3,7 +3,7 @@ cursor = "0x808080"
 text = "0xffffff"
 
 [font]
-size = 12
+size = 10
 
 [font.offset]
 x = 0
@@ -11,7 +11,7 @@ y = 8
 
 [font.glyph_offset]
 x = 0
-y = 3
+y = 2
 
 [font.normal]
 family = "MonaspiceKr Nerd Font"
@@ -46,7 +46,7 @@ save_to_clipboard = true
 
 live_config_reload = true
 import = [
-    "~/.config/alacritty/themes/themes/everforest_dark.toml"
+    "~/.config/alacritty/themes/themes/everforest_dark_hard.toml"
 ]
 
 [terminal]
