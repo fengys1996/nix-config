@@ -39,6 +39,8 @@
   programs.alacritty.enable = true;
   xdg.configFile."alacritty".source = ./dot/alacritty;
 
+  home.file.".codex/AGENTS.md".source = ./dot/agents/AGENTS.md;
+
   programs.firefox = {
     enable = true;
     configPath = ".mozilla/firefox";
