@@ -119,5 +119,8 @@
     docker-compose
     mariadb.client
     bcc
+    delta
+    lazygit
+    gh
   ];
 }
