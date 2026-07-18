@@ -130,5 +130,6 @@
     gh
     bluez
     bluez-tools
+    bluetui
   ];
 }
