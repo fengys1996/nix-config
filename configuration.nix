@@ -27,6 +27,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  hardware.bluetooth.enable = true;
   
   # If you want to run binaries from another platform, please install:
   # ```

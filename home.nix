@@ -124,5 +124,7 @@
     delta
     lazygit
     gh
+    bluez
+    bluez-tools
   ];
 }
