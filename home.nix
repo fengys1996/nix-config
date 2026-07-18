@@ -64,6 +64,8 @@
   };
 
   xdg.configFile."wofi".source = ./dot/wofi;
+
+  xdg.configFile."foot".source = ./dot/foot;
   
   home.file.".local/share/nvim/site/parser/rust.so".source =
     "${pkgs.tree-sitter-grammars.tree-sitter-rust}/parser";

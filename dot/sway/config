@@ -14,8 +14,8 @@ set $right l
 # - force
 focus_wrapping force
 
-set $term alacritty
-set $alternative_term foot
+set $term foot
+set $alternative_term alacritty
 
 set $menu wofi --show drun
 
