@@ -85,6 +85,8 @@
     GTK_IM_MODULE = "fcitx";
     QT_IM_MODULE = "fcitx";
     XMODIFIERS = "@im=fcitx";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
   };
   
   home.packages = with pkgs; [
