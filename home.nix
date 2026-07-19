@@ -131,5 +131,6 @@
     bluez
     bluez-tools
     bluetui
+    bibata-cursors
   ];
 }

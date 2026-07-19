@@ -24,7 +24,7 @@ set $bg_picture_1 ~/.config/bg/nixos-wallpapers.png
 set $Locker swaylock -f -i $bg_picture_1
 
 # Configure cusor
-seat * xcursor_theme default 30
+seat * xcursor_theme Bibata-Modern-Classic 24
 
 bindsym $mod+d exec $menu
 
