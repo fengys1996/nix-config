@@ -13,6 +13,8 @@
   # home-manager.users.fys = import ./home.nix;
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  programs.ssh.startAgent = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

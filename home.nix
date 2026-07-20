@@ -9,7 +9,6 @@
   
   home.username = "fys";
   home.homeDirectory = "/home/fys";
-
   home.stateVersion = "25.05";
   
   home.activation.bootstrapNvimConfig = lib.hm.dag.entryAfter ["writeBoundary"] ''
@@ -133,5 +132,6 @@
     bluetui
     bibata-cursors
     p7zip
+    cargo-ndk
   ];
 }

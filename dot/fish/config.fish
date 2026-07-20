@@ -1,6 +1,8 @@
 if status is-interactive
     set -x RUSTUP_DIST_SERVER "https://rsproxy.cn"
     set -x RUSTUP_UPDATE_ROOT "https://rsproxy.cn/rustup"
+
+    set -x ANDROID_NDK_HOME "/home/fys/soft/ndk/android-ndk-r27d"
     
     set -x QT_SCALE_FACTOR 1
 
