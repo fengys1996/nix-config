@@ -132,5 +132,6 @@
     bluez-tools
     bluetui
     bibata-cursors
+    p7zip
   ];
 }
