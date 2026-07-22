@@ -133,5 +133,7 @@
     bibata-cursors
     p7zip
     cargo-ndk
+    zellij
+    tmux
   ];
 }

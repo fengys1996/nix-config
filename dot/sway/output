@@ -1,8 +1,8 @@
 # You can get a list of output names and additional information using the command: 
 # `swaymsg -t get_outputs`
 
-set $output_1 "Dell Inc. DELL U2723QE 6S0LL04"
-set $output_2 "Philips Consumer Electronics Company PHL 27E1N5900 UK82221004040"
+set $output_1 "Philips Consumer Electronics Company PHL 27E1N5900 UK82221004040"
+set $output_2 "Dell Inc. DELL U2723QE 6S0LL04"
 set $output_3 "Samsung Electric Company C27F390 H4ZM505964"
 
 output "Dell Inc. DELL U2723QE 6S0LL04" {
@@ -41,8 +41,8 @@ workspace $ws1  output $output_1
 workspace $ws2  output $output_1
 workspace $ws3  output $output_1
 workspace $ws4  output $output_1
-workspace $ws9  output $output_2
-workspace $ws10 output $output_2
+workspace $ws9  output $output_1
+workspace $ws10 output $output_1
 
 # Move focused container to workspace.
 bindsym $mod+Shift+1 move container to workspace number $ws1
