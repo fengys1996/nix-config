@@ -135,5 +135,6 @@
     cargo-ndk
     zellij
     tmux
+    python3
   ];
 }

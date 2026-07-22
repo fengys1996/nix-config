@@ -25,3 +25,21 @@ rtk cargo build
 ```
 
 If rtk fails, explain the issue and fall back to cargo.
+
+## GreptimeDB SQLness
+
+When running SQLness tests in the GreptimeDB project:
+
+1. If `sqlness-runner` is available in `PATH`, first build the GreptimeDB binary:
+
+   ```bash
+   rtk cargo build --bin greptime -p cmd
+   ```
+
+   Then run:
+
+   ```bash
+   sqlness-runner bare -c ./tests/cases/ -t json -j 4 --bins-dir ./target/debug/
+   ```
+
+2. Otherwise, run `make sqlness`, which builds GreptimeDB automatically.
