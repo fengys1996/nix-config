@@ -32,7 +32,7 @@ bindsym $mod+o exec killall -SIGUSR1 waybar
 
 default_border normal
 # default_floating_border none
-font "MonaspiceKr Nerd Font" 10
+font "MonaspiceKr Nerd Font" light 10
 # titlebar_padding 1
 # titlebar_border_thickness 0
 gaps inner 0
@@ -42,10 +42,10 @@ gaps inner 0
 # client.unfocused            #f6f2ee #707070 #FFFFFF #808080 #808080
 # client.focused_tab_title    #f6f2ee #508080 #FFFFFF #808080 #808080
 # everforest style
-client.focused              #3a454a #9bbf8f #222222 #808080 #808080
+client.focused              #91aa96 #607c66 #ffffff #91aa96 #91aa96
 client.unfocused            #3a454a #3a454a #ffffff #808080 #808080
-client.focused_tab_title    #3a454a #508080 #ffffff #808080 #808080
-client.urgent               #3a454a #d08770 #ffffff #e67e22 #e67e22
+client.focused_tab_title    #91aa96 #607c66 #ffffff #91aa96 #91aa96
+client.urgent               #a85454 #a85454 #ffffff #e67e22 #a85454
 
 # Move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -63,10 +63,10 @@ bar {
         background #3a454a
         statusline #d8dee9
         separator #657b83
-        focused_workspace  #9bbf8f #9bbf8f #222222
-        active_workspace   #508080 #508080 #ffffff
-        inactive_workspace #3a454a #3a454a #808080
-        urgent_workspace   #d08770 #d08770 #ffffff
+        focused_workspace  #91aa96 #607c66 #ffffff
+        active_workspace   #526b58 #526b58 #ffffff
+        inactive_workspace #3a454a #3a454a #a0a0a0
+        urgent_workspace   #a85454 #a85454 #ffffff
     }
     separator_symbol " | "
     height 20

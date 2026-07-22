@@ -5,18 +5,18 @@ set $output_1 "Philips Consumer Electronics Company PHL 27E1N5900 UK82221004040"
 set $output_2 "Dell Inc. DELL U2723QE 6S0LL04"
 set $output_3 "Samsung Electric Company C27F390 H4ZM505964"
 
-output "Dell Inc. DELL U2723QE 6S0LL04" {
-    scale 1
-    transform 0
-}
-
-output "Philips Consumer Electronics Company PHL 27E1N5900 UK82221004040" {
+output $output_1 {
     scale 1.5
     bg ~/.config/bg/nixos-wallpapers.png fill
     transform 0
 }
 
-output "Samsung Electric Company C27F390 H4ZM505964" {
+output $output_2 {
+    scale 1
+    transform 0
+}
+
+output $output_3 {
     scale 1
     transform 0
 }
