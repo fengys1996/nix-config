@@ -35,6 +35,12 @@
 
   xdg.configFile."fish/config.fish".source = ./dot/fish/config.fish;
 
+  programs.tmux = {
+    enable = true;
+    shell = "${pkgs.fish}/bin/fish";
+    extraConfig = builtins.readFile ./dot/tmux/.tmux.conf;
+  };
+
   programs.alacritty.enable = true;
   xdg.configFile."alacritty".source = ./dot/alacritty;
 
@@ -99,6 +105,7 @@
     protobuf
     taplo
     curl
+    wget
     ripgrep
     fzf
     fd
@@ -134,7 +141,6 @@
     p7zip
     cargo-ndk
     zellij
-    tmux
     python3
   ];
 }
