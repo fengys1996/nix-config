@@ -79,6 +79,8 @@
     enable = true;
 
     settings = {
+      commit.signoff = true;
+
       user = {
         name = "fys";
         email = "fengys1996@gmail.com";
