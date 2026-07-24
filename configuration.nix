@@ -29,7 +29,17 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager.enable = false;
+
+  networking.wireless.iwd = {
+    enable = true;
+
+    settings = {
+      General.EnableNetworkConfiguration = true;
+      Network.EnableIPv6 = true;
+      Settings.AutoConnect = true;
+    };
+  };
 
   hardware.bluetooth.enable = true;
   
@@ -81,7 +91,7 @@
   users.users."fys" = {
     isNormalUser = true;
     description = "fys";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "wheel" "docker" ];
     packages = with pkgs; [];
   };
 
@@ -91,6 +101,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    impala
     neovim
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
