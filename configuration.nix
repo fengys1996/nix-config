@@ -42,6 +42,11 @@
   };
 
   hardware.bluetooth.enable = true;
+
+  services.v2raya = {
+    enable = true;
+    package = pkgs.v2raya;
+  };
   
   # If you want to run binaries from another platform, please install:
   # ```
