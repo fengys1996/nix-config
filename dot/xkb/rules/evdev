@@ -1,0 +1,4 @@
+! include %S/evdev
+
+! option = symbols
+  custom:swap_esc_tilde = +swap_esc_tilde(swap)

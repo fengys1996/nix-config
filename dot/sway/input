@@ -5,7 +5,7 @@ input * repeat_delay 200
 input * repeat_rate 100
 
 input "type:keyboard" {
-	xkb_options ctrl:nocaps
+	xkb_options ctrl:nocaps,custom:swap_esc_tilde
 }
 
 # ## How to find input id

@@ -30,6 +30,8 @@
   xdg.configFile."fontconfig/fonts.conf".source = ./dot/linuxfont/fonts.conf;
   
   xdg.configFile."./xkb/symbols/us_minila_r".source = ./dot/xkb/us_minila_r;
+  xdg.configFile."xkb/symbols/swap_esc_tilde".source = ./dot/xkb/symbols/swap_esc_tilde;
+  xdg.configFile."xkb/rules/evdev".source = ./dot/xkb/rules/evdev;
   
   xdg.configFile."rad".source = ./dot/rad;
 

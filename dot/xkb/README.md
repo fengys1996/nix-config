@@ -38,3 +38,37 @@ cp ./dot/xkb/us_minila_r ~/.config/xkb/symbols/
 
 
 Then, you can set the keyboard layout in your system settings.
+
+# Swap Esc and Tilde
+
+`swap_esc_tilde` is an XKB option that provides the following mappings:
+
+- The physical `Esc` key outputs `` ` ``.
+- `Shift` + the physical `Esc` key outputs `~`.
+- The physical `` ` ``/`~` key outputs `Escape`.
+
+Install the symbols and rules files:
+
+```
+mkdir -p ~/.config/xkb/symbols ~/.config/xkb/rules
+
+cp ./dot/xkb/symbols/swap_esc_tilde ~/.config/xkb/symbols/
+cp ./dot/xkb/rules/evdev ~/.config/xkb/rules/
+```
+
+Enable the option in the Sway input configuration:
+
+```
+input "type:keyboard" {
+    xkb_options ctrl:nocaps,custom:swap_esc_tilde
+}
+```
+
+A device-specific input configuration can replace `xkb_options` to disable the
+swap for a matched keyboard:
+
+```
+input "vendor:product:name" {
+    xkb_options ctrl:nocaps
+}
+```
