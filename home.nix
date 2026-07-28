@@ -144,5 +144,6 @@
     cargo-ndk
     zellij
     python3
+    typos
   ];
 }
