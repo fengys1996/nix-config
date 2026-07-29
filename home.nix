@@ -145,5 +145,6 @@
     zellij
     python3
     typos
+    bottom
   ];
 }
