@@ -16,6 +16,7 @@
           ./configuration.nix
           home-manager.nixosModules.default
           {
+            home-manager.useGlobalPkgs = true;
             home-manager.users.fys = import ./home.nix;
           }
         ];

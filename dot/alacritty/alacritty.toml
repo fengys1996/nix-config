@@ -7,14 +7,14 @@ size = 10
 
 [font.offset]
 x = 0
-y = 8
+y = 2
 
 [font.glyph_offset]
 x = 0
-y = 2
+y = 1
 
 [font.normal]
-family = "MonaspiceKr Nerd Font"
+family = "intonemono nerd font"
 style = "light"
 
 [font.bold]

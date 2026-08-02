@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -14,6 +14,12 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   programs.ssh.startAgent = true;
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "libwemeetwrap"
+      "wemeet"
+    ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -99,9 +105,6 @@
     extraGroups = [ "wheel" "docker" ];
     packages = with pkgs; [];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

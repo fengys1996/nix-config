@@ -59,7 +59,7 @@
       settings = {
         "browser.display.use_document_fonts" = 0;
         "font.language.group" = "x-western";
-        "layout.css.devPixelsPerPx" = "1";
+        "layout.css.devPixelsPerPx" = "-1.0";
         "font.name.monospace.x-western" = "MonaspiceKr Nerd Font Mono";
         "font.name.monospace.zh-CN" = "LXGW WenKai Mono";
         "font.name.sans-serif.x-western" = "MonaspiceKr Nerd Font";
@@ -129,6 +129,7 @@
     swappy
     wl-clipboard
     nerd-fonts.monaspace
+    nerd-fonts.intone-mono
     lxgw-wenkai
     docker-compose
     mariadb.client
@@ -147,5 +148,7 @@
     typos
     bottom
     libreoffice
+    rtk
+    wemeet
   ];
 }
