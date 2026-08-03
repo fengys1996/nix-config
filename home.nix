@@ -150,5 +150,8 @@
     libreoffice
     rtk
     wemeet
+    feishu
+    feishu-cli
+    opencode
   ];
 }

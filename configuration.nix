@@ -19,6 +19,8 @@
     builtins.elem (lib.getName pkg) [
       "libwemeetwrap"
       "wemeet"
+      "feishu"
+      "feishu-cli"
     ];
 
   # Bootloader.
@@ -123,6 +125,36 @@
   #   enableSSHSupport = true;
   # };
   programs.sway.enable = true;
+
+  security.rtkit.enable = true;
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
+
+    config.sway = {
+      "org.freedesktop.impl.portal.ScreenCast" = "wlr";
+      "org.freedesktop.impl.portal.Screenshot" = "wlr";
+    };
+
+    wlr = {
+      enable = true;
+
+      settings.screencast = {
+        chooser_type = "dmenu";
+        chooser_cmd = "${pkgs.wofi}/bin/wofi --dmenu --prompt 'Select a source to share:'";
+      };
+    };
+  };
 
   virtualisation.docker.enable = true;
 
