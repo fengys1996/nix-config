@@ -28,6 +28,10 @@
   xdg.configFile."sway".source = ./dot/sway;
 
   xdg.configFile."fontconfig/fonts.conf".source = ./dot/linuxfont/fonts.conf;
+
+  xdg.configFile."fcitx5/conf/classicui.conf".text = ''
+    Font="LXGW WenKai Mono 14"
+  '';
   
   xdg.configFile."./xkb/symbols/us_minila_r".source = ./dot/xkb/us_minila_r;
   xdg.configFile."xkb/symbols/swap_esc_tilde".source = ./dot/xkb/symbols/swap_esc_tilde;
