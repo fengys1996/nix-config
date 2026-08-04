@@ -39,7 +39,10 @@
   
   xdg.configFile."rad".source = ./dot/rad;
 
-  xdg.configFile."fish/config.fish".source = ./dot/fish/config.fish;
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = builtins.readFile ./dot/fish/config.fish;
+  };
 
   programs.tmux = {
     enable = true;
@@ -90,6 +93,25 @@
       catppuccin-mocha = "${inputs.yazi-flavors}/catppuccin-mocha.yazi";
       catppuccin-latte = "${inputs.yazi-flavors}/catppuccin-latte.yazi";
     };
+
+    plugins.git = {
+      package = pkgs.yaziPlugins.git;
+      setup = true;
+      settings.order = 1500;
+    };
+
+    settings.plugin.prepend_fetchers = [
+      {
+        url = "*";
+        run = "git";
+        group = "git";
+      }
+      {
+        url = "*/";
+        run = "git";
+        group = "git";
+      }
+    ];
   };
   
   home.file.".local/share/nvim/site/parser/rust.so".source =
@@ -117,7 +139,6 @@
   home.packages = with pkgs; [
     gnumake
     file
-    fish
     rustup
     neovim
     mold
