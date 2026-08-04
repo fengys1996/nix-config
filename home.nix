@@ -77,6 +77,20 @@
   xdg.configFile."wofi".source = ./dot/wofi;
 
   xdg.configFile."foot".source = ./dot/foot;
+
+  programs.yazi = {
+    enable = true;
+
+    theme.flavor = {
+      dark = "catppuccin-mocha";
+      light = "catppuccin-latte";
+    };
+
+    flavors = {
+      catppuccin-mocha = "${inputs.yazi-flavors}/catppuccin-mocha.yazi";
+      catppuccin-latte = "${inputs.yazi-flavors}/catppuccin-latte.yazi";
+    };
+  };
   
   home.file.".local/share/nvim/site/parser/rust.so".source =
     "${pkgs.tree-sitter-grammars.tree-sitter-rust}/parser";
@@ -124,7 +138,6 @@
     wofi
     codex
     unzip
-    yazi
     zoxide
     tree-sitter
     tree-sitter-grammars.tree-sitter-rust

@@ -6,9 +6,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    yazi-flavors = {
+      url = "github:yazi-rs/flavors";
+      flake = false;
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations.desktop =
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -17,6 +22,7 @@
           home-manager.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.fys = import ./home.nix;
           }
         ];
