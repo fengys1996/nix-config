@@ -6,6 +6,15 @@
     # TODO: add rad.toml config
     ./services/rad.nix
   ];
+
+  home.pointerCursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 24;
+  
+    gtk.enable = true;
+    x11.enable = true;
+  };
   
   home.username = "fys";
   home.homeDirectory = "/home/fys";
