@@ -34,7 +34,10 @@
 
   home.file.".config/bg/nixos-wallpapers.png".source = ./dot/bg/nixos-wallpapers.png;
 
-  home.file.".pi/agent/settings.json".source = ./dot/pi/settings.json;
+  home.file.".pi/agent/settings.json" = {
+    source = ./dot/pi/settings.json;
+    force = true;
+  };
 
   wayland.windowManager.sway.enable = true;
   xdg.configFile."sway".source = ./dot/sway;
