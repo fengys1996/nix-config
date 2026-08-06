@@ -8,6 +8,7 @@
   ];
 
   home.pointerCursor = {
+    enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
     size = 24;
@@ -32,6 +33,8 @@
   '';
 
   home.file.".config/bg/nixos-wallpapers.png".source = ./dot/bg/nixos-wallpapers.png;
+
+  home.file.".pi/agent/settings.json".source = ./dot/pi/settings.json;
 
   wayland.windowManager.sway.enable = true;
   xdg.configFile."sway".source = ./dot/sway;
@@ -63,6 +66,7 @@
   xdg.configFile."alacritty".source = ./dot/alacritty;
 
   home.file.".codex/AGENTS.md".source = ./dot/agents/AGENTS.md;
+  home.file.".pi/agent/AGENTS.md".source = ./dot/agents/AGENTS.md;
 
   programs.firefox = {
     enable = true;
@@ -92,6 +96,7 @@
 
   programs.yazi = {
     enable = true;
+    shellWrapperName = "y";
 
     theme.flavor = {
       dark = "catppuccin-mocha";
@@ -166,7 +171,6 @@
     htop
     btop
     wofi
-    codex
     unzip
     zoxide
     tree-sitter
@@ -199,6 +203,8 @@
     wemeet
     feishu
     feishu-cli
+    codex
     opencode
+    pi-coding-agent
   ];
 }
