@@ -209,5 +209,6 @@
     codex
     opencode
     pi-coding-agent
+    fastfetch
   ];
 }

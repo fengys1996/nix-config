@@ -11,7 +11,13 @@
       ./hardware-configuration.nix
     ];
   # home-manager.users.fys = import ./home.nix;
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    substituters = [
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+      "https://cache.nixos.org/"
+    ];
+  };
 
   programs.ssh.startAgent = true;
 
@@ -26,6 +32,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   
   programs.nix-ld.enable = true;
 
