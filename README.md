@@ -29,3 +29,9 @@ Check the configuration without switching:
 ```sh
 nix flake check
 ```
+
+Manually remove store paths that are no longer referenced by any GC root:
+
+```sh
+nix-collect-garbage
+```

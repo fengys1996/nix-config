@@ -19,6 +19,17 @@
     ];
   };
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 14d";
+  };
+
+  services.fstrim = {
+    enable = true;
+    interval = "weekly";
+  };
+
   programs.ssh.startAgent = true;
 
   nixpkgs.config.allowUnfreePredicate = pkg:
