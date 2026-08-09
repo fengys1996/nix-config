@@ -38,6 +38,7 @@
       "wemeet"
       "feishu"
       "feishu-cli"
+      "obsidian"
     ];
 
   # Bootloader.
@@ -72,6 +73,12 @@
   services.v2raya = {
     enable = true;
     package = pkgs.v2raya;
+  };
+  
+  services.prometheus.exporters.node = {
+    enable = true;
+    port = 9100;
+    openFirewall = true;
   };
   
   # If you want to run binaries from another platform, please install:

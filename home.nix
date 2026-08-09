@@ -210,5 +210,6 @@
     opencode
     pi-coding-agent
     fastfetch
+    obsidian
   ];
 }
