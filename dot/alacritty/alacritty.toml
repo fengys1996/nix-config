@@ -6,8 +6,8 @@ text = "0xffffff"
 size = 10
 
 [font.offset]
-x = 1
-y = 4
+x = 2
+y = 8
 
 [font.glyph_offset]
 x = 0

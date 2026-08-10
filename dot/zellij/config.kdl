@@ -1,0 +1,56 @@
+keybinds {
+    normal {
+        bind "Alt 1"  { GoToTab 1; }
+        bind "Alt 2"  { GoToTab 2; }
+        bind "Alt 3"  { GoToTab 3; }
+        bind "Alt 4"  { GoToTab 4; }
+        bind "Alt 5"  { GoToTab 5; }
+        bind "Alt 6"  { GoToTab 6; }
+        bind "Alt 7"  { GoToTab 7; }
+        bind "Alt 8"  { GoToTab 8; }
+        bind "Alt 9"  { GoToTab 9; }
+		unbind "Ctrl n"
+        unbind "Ctrl g"
+        bind "Alt Space" { SwitchToMode "Locked"; }
+        bind "Alt h" { MoveFocus "Left"; }
+        bind "Alt j" { MoveFocus "Down"; }
+        bind "Alt k" { MoveFocus "Up"; }
+        bind "Alt l" { MoveFocus "Right"; }
+        bind "Alt n" { GoToNextTab; }
+        bind "Alt p" { GoToPreviousTab; }
+        bind "Alt N" { MoveTab "Right"; }
+        bind "Alt P" { MoveTab "Left"; }
+    }
+    locked {
+	    bind "Ctrl q" { Quit; }
+        bind "Alt 1"  { GoToTab 1; }
+        bind "Alt 2"  { GoToTab 2; }
+        bind "Alt 3"  { GoToTab 3; }
+        bind "Alt 4"  { GoToTab 4; }
+        bind "Alt 5"  { GoToTab 5; }
+        bind "Alt 6"  { GoToTab 6; }
+        bind "Alt 7"  { GoToTab 7; }
+        bind "Alt 8"  { GoToTab 8; }
+        bind "Alt 9"  { GoToTab 9; }
+        unbind "Ctrl g"
+        bind "Alt Space" { SwitchToMode "Normal"; }
+        bind "Alt n" { GoToNextTab; }
+        bind "Alt p" { GoToPreviousTab; }
+        bind "Alt N" { MoveTab "Right"; }
+        bind "Alt P" { MoveTab "Left"; }
+    }
+}
+
+theme "focus"
+
+default_shell "fish"
+
+scrollback_editor "nvim"
+
+on_force_close "quit"
+
+scroll_buffer_size 10000
+
+show_startup_tips false
+
+pane_frames false

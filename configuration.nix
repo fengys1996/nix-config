@@ -39,6 +39,7 @@
       "feishu"
       "feishu-cli"
       "obsidian"
+      "vscode"
     ];
 
   # Bootloader.

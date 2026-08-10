@@ -65,6 +65,9 @@
     extraConfig = builtins.readFile ./dot/tmux/.tmux.conf;
   };
 
+  programs.zellij.enable = true;
+  xdg.configFile."zellij".source = ./dot/zellij;
+
   programs.alacritty.enable = true;
   xdg.configFile."alacritty".source = ./dot/alacritty;
 
@@ -197,7 +200,6 @@
     bibata-cursors
     p7zip
     cargo-ndk
-    zellij
     python3
     typos
     bottom
@@ -211,5 +213,6 @@
     pi-coding-agent
     fastfetch
     obsidian
+    vscode
   ];
 }
