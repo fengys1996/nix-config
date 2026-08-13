@@ -6,12 +6,12 @@ text = "0xffffff"
 size = 10
 
 [font.offset]
-x = 2
+x = 1
 y = 8
 
 [font.glyph_offset]
 x = 0
-y = 1
+y = 2
 
 [font.normal]
 family = "monaspicekr nerd font"
@@ -21,9 +21,11 @@ style = "regular"
 style = "regular"
 
 [font.italic]
+family = "monaspicern nerd font"
 style = "italic"
 
 [font.bold_italic]
+family = "monaspicern nerd font"
 style = "italic"
 
 [terminal.shell]
@@ -46,7 +48,7 @@ save_to_clipboard = true
 
 live_config_reload = true
 import = [
-    "~/.config/alacritty/themes/themes/dayfox.toml"
+    "~/.config/alacritty/themes/themes/github_light_high_contrast.toml"
 ]
 
 [terminal]

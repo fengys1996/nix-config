@@ -32,6 +32,18 @@
     fi
   '';
 
+  home.activation.bootstrapAlacrittyConfig = lib.hm.dag.entryAfter ["linkGeneration"] ''
+    set -e
+    alacritty_dir="${config.xdg.configHome}/alacritty"
+    if [ ! -e "$alacritty_dir" ] && [ ! -L "$alacritty_dir" ]; then
+      mkdir -p "$(dirname "$alacritty_dir")"
+      cp -R ${./dot/alacritty} "$alacritty_dir"
+      chmod -R u+w "$alacritty_dir"
+    else
+      echo "Alacritty config already exists, skipping bootstrap: $alacritty_dir"
+    fi
+  '';
+
   home.file.".config/bg/nixos-wallpapers.png".source = ./dot/bg/nixos-wallpapers.png;
 
   home.file.".pi/agent/settings.json" = {
@@ -69,7 +81,6 @@
   xdg.configFile."zellij".source = ./dot/zellij;
 
   programs.alacritty.enable = true;
-  xdg.configFile."alacritty".source = ./dot/alacritty;
 
   home.file.".codex/AGENTS.md".source = ./dot/agents/AGENTS.md;
   home.file.".pi/agent/AGENTS.md".source = ./dot/agents/AGENTS.md;
