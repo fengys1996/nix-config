@@ -134,10 +134,10 @@ bindsym $mod+a focus child
 ####################################################################################
 # Some operations at the system level
 ####################################################################################
-# exec swayidle -w \
-#          timeout 1200 'swaylock -f -i /home/fys/picture/bsj.jpg' \
-#          timeout 1260 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -i /home/fys/picture/bsj.jpg'
+exec swayidle -w \
+         timeout 1200 '$Locker' \
+         timeout 1260 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         before-sleep '$Locker'
 
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
