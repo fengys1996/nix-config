@@ -14,7 +14,6 @@
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     substituters = [
-      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
       "https://cache.nixos.org/"
     ];
   };
@@ -34,8 +33,6 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
-      "libwemeetwrap"
-      "wemeet"
       "feishu"
       "feishu-cli"
       "obsidian"

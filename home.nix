@@ -216,7 +216,6 @@
     bottom
     libreoffice
     rtk
-    wemeet
     feishu
     feishu-cli
     codex
@@ -225,5 +224,6 @@
     fastfetch
     obsidian
     vscode
+    go
   ];
 }
