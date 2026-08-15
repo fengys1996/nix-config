@@ -1,0 +1,24 @@
+// https://github.com/Alexays/Waybar/wiki/Configuration
+[
+    {
+        "output": "Dell Inc. DELL U2723QE 6S0LL04",
+        "name": "monitor-4k",
+        "include": [
+            "~/.config/waybar/default.json"
+        ]
+    },
+    {
+        "output": "Samsung Electric Company C27F390 H4ZM505964",
+        "name": "monitor-1080p",
+        "include": [
+            "~/.config/waybar/default.json"
+        ]
+    },
+    {
+        "output": "Philips Consumer Electronics Company PHL 27E1N5900 UK82221004040",
+        "name": "monitor-4k",
+        "include": [
+            "~/.config/waybar/default.json"
+        ]
+    },
+]

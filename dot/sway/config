@@ -28,11 +28,11 @@ seat * xcursor_theme Bibata-Modern-Classic 24
 
 bindsym $mod+d exec $menu
 
-bindsym $mod+o exec killall -SIGUSR1 waybar
+bindsym $mod+o exec pkill -USR1 waybar
 
 default_border normal
 # default_floating_border none
-font "MonaspiceKr Nerd Font" light 10
+font "MonaspiceKr Nerd Font" regular 10
 # titlebar_padding 1
 # titlebar_border_thickness 0
 gaps inner 0
@@ -56,22 +56,25 @@ bindsym $mod+minus scratchpad show
 # status bar
 ####################################################################################
 
-bar {
-    position top
-    font pango:MonaspiceKr Nerd Font, LXGW WenKai Mono 10
-    colors {
-        background #3a454a
-        statusline #d8dee9
-        separator #657b83
-        focused_workspace  #91aa96 #607c66 #ffffff
-        active_workspace   #526b58 #526b58 #ffffff
-        inactive_workspace #3a454a #3a454a #a0a0a0
-        urgent_workspace   #a85454 #a85454 #ffffff
-    }
-    separator_symbol " | "
-    height 20
-}
+# bar {
+#     position top
+#     font pango:MonaspiceKr Nerd Font, LXGW WenKai Mono 10
+#     colors {
+#         background #3a454a
+#         statusline #d8dee9
+#         separator #657b83
+#         focused_workspace  #91aa96 #607c66 #ffffff
+#         active_workspace   #526b58 #526b58 #ffffff
+#         inactive_workspace #3a454a #3a454a #a0a0a0
+#         urgent_workspace   #a85454 #a85454 #ffffff
+#     }
+#     separator_symbol " | "
+#     height 20
+# }
 
+bar {
+    swaybar_command waybar
+}
 
 ####################################################################################
 # Some applications that are automatically launched

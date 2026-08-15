@@ -53,6 +53,7 @@
 
   wayland.windowManager.sway.enable = true;
   xdg.configFile."sway".source = ./dot/sway;
+  xdg.configFile."waybar".source = ./dot/waybar;
 
   xdg.configFile."fontconfig/fonts.conf".source = ./dot/linuxfont/fonts.conf;
 
@@ -208,6 +209,7 @@
     bluez
     bluez-tools
     bluetui
+    pavucontrol
     bibata-cursors
     p7zip
     cargo-ndk
@@ -225,5 +227,6 @@
     obsidian
     vscode
     go
+    waybar
   ];
 }

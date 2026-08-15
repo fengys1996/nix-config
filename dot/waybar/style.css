@@ -1,0 +1,128 @@
+@define-color bar-background #3a454a;
+@define-color bar-foreground #d8dee9;
+@define-color module-background #526b58;
+@define-color module-border #657b83;
+@define-color focused-background #607c66;
+@define-color urgent-background #a85454;
+
+* {
+    min-height: 0;
+    border-radius: 5px;
+    border: none;
+    font-family: "MonaspiceKr Nerd Font";
+    box-shadow: none;
+    text-shadow: none;
+    transition-duration: 0s;
+}
+
+window#waybar {
+    color: @bar-foreground;
+    background: @bar-background;
+}
+
+window#waybar.monitor-1080p {
+    font-size: 12px;
+}
+
+#workspaces {
+    margin: 0;
+}
+
+#workspaces button {
+    margin: 0;
+    padding: 0 10px;
+    color: rgba(217, 216, 216, 1);
+}
+
+#workspaces button.visible {
+    color: rgba(0, 0, 0, 1);
+}
+
+#workspaces button.focused {
+    background: @focused-background;
+    border-top: 1px solid @module-border;
+    color: @bar-foreground;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background: @urgent-background;
+    color: @bar-foreground;
+}
+
+#idle_inhibitor,
+#pulseaudio,
+#pulseaudio-slider,
+#network,
+#disk,
+#cpu,
+#temperature,
+#memory,
+#keyboard-state,
+#language,
+#systemd-failed-units,
+#tray {
+    margin: 1px 2px;
+    padding: 0 10px;
+    min-width: 25px;
+    background: @module-background;
+    border: 1px solid @module-border;
+}
+
+#clock {
+    margin: 1px 2px;
+    padding: 0 12px;
+    background: @module-background;
+    border: 1px solid @module-border;
+}
+
+#pulseaudio-slider {
+    min-width: 80px;
+}
+
+#pulseaudio-slider slider {
+    min-width: 0;
+    min-height: 0;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+    min-width: 80px;
+    min-height: 6px;
+    background: @bar-background;
+}
+
+#pulseaudio-slider highlight {
+    min-height: 6px;
+    background: @bar-foreground;
+}
+
+#idle_inhibitor.activated {
+    background: @focused-background;
+}
+
+#network.disconnected,
+#pulseaudio.muted {
+    background: @urgent-background;
+}
+
+#temperature.critical,
+#systemd-failed-units.degraded,
+#privacy-item {
+    background: @urgent-background;
+    border: 1px solid @module-border;
+}
+
+#tray > .needs-attention {
+    background: @urgent-background;
+}
+
+#mode {
+    margin: 1px 2px;
+    padding: 0 10px;
+    background: @focused-background;
+    border: 1px solid @module-border;
+}
