@@ -32,7 +32,7 @@ bindsym $mod+o exec pkill -USR1 waybar
 
 default_border normal
 # default_floating_border none
-font "MonaspiceKr Nerd Font" regular 10
+font "MonaspiceKr Nerd Font" light 10
 # titlebar_padding 1
 # titlebar_border_thickness 0
 gaps inner 0

@@ -63,6 +63,7 @@
   
   xdg.configFile."./xkb/symbols/us_minila_r".source = ./dot/xkb/us_minila_r;
   xdg.configFile."xkb/symbols/swap_esc_tilde".source = ./dot/xkb/symbols/swap_esc_tilde;
+  xdg.configFile."xkb/symbols/esdf_arrows".source = ./dot/xkb/symbols/esdf_arrows;
   xdg.configFile."xkb/rules/evdev".source = ./dot/xkb/rules/evdev;
   
   xdg.configFile."rad".source = ./dot/rad;
@@ -218,7 +219,9 @@
     bottom
     libreoffice
     rtk
-    feishu
+    (feishu.override {
+      commandLineArgs = "--ozone-platform=wayland --enable-wayland-ime --wayland-text-input-version=3";
+    })
     feishu-cli
     codex
     opencode

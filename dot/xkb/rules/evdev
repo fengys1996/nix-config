@@ -2,3 +2,4 @@
 
 ! option = symbols
   custom:swap_esc_tilde = +swap_esc_tilde(swap)
+  custom:esdf_arrows = +esdf_arrows(ralt)

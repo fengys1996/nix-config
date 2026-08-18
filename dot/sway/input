@@ -28,3 +28,7 @@ input "14000:12383:RDMCTMZT_Alice80_Keyboard" {
 	xkb_layout us,us(dvorak),us(dvp)
 	xkb_options ctrl:nocaps
 }
+
+input "1204:1296:HID_Keyboard_HID_Keyboard" {
+	xkb_options ctrl:nocaps,custom:swap_esc_tilde,custom:esdf_arrows
+}

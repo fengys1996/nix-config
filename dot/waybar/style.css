@@ -76,6 +76,24 @@ window#waybar.monitor-1080p {
     border: 1px solid @module-border;
 }
 
+#cpu,
+#memory,
+#temperature {
+    min-width: 55px;
+}
+
+#network {
+    min-width: 180px;
+}
+
+#pulseaudio {
+    min-width: 25px;
+}
+
+#idle_inhibitor {
+    min-width: 85px;
+}
+
 #pulseaudio-slider {
     min-width: 80px;
 }

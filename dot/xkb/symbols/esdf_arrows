@@ -1,0 +1,9 @@
+partial alphanumeric_keys
+xkb_symbols "ralt" {
+    include "level3(ralt_switch)"
+
+    key <AD03> { type[Group1] = "FOUR_LEVEL", [ e, E, Up,    Up    ] };
+    key <AC02> { type[Group1] = "FOUR_LEVEL", [ s, S, Left,  Left  ] };
+    key <AC03> { type[Group1] = "FOUR_LEVEL", [ d, D, Down,  Down  ] };
+    key <AC04> { type[Group1] = "FOUR_LEVEL", [ f, F, Right, Right ] };
+};

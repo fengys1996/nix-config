@@ -72,3 +72,13 @@ input "vendor:product:name" {
     xkb_options ctrl:nocaps
 }
 ```
+
+`esdf_arrows` turns the right Alt key into a momentary navigation layer:
+
+- Right Alt + `E`: Up
+- Right Alt + `S`: Left
+- Right Alt + `D`: Down
+- Right Alt + `F`: Right
+
+Enable it for a specific keyboard by adding `custom:esdf_arrows` to that
+device's `xkb_options` in the Sway input configuration.
