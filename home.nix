@@ -192,8 +192,6 @@
     wofi
     unzip
     zoxide
-    tree-sitter
-    tree-sitter-grammars.tree-sitter-rust
     grim
     slurp
     swappy
@@ -217,7 +215,6 @@
     python3
     typos
     bottom
-    libreoffice
     rtk
     (feishu.override {
       commandLineArgs = "--ozone-platform=wayland --enable-wayland-ime --wayland-text-input-version=3";
