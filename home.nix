@@ -1,6 +1,10 @@
 { config, pkgs, lib, inputs, ... }:
 
-{
+let
+  feishuFontconfig = pkgs.writeText "feishu-fonts.conf" (
+    builtins.readFile ./dot/linuxfont/feishu-fonts.conf
+  );
+in {
   imports = [
     # TODO: auto install rad
     # TODO: add rad.toml config
@@ -216,9 +220,16 @@
     typos
     bottom
     rtk
-    (feishu.override {
+    ((feishu.override {
       commandLineArgs = "--ozone-platform=wayland --enable-wayland-ime --wayland-text-input-version=3";
-    })
+    }).overrideAttrs (oldAttrs: {
+      postFixup = (oldAttrs.postFixup or "") + ''
+        for executable in $out/opt/bytedance/feishu/{feishu,vulcan/vulcan}; do
+          wrapProgram "$executable" \
+            --set FONTCONFIG_FILE ${feishuFontconfig}
+        done
+      '';
+    }))
     feishu-cli
     codex
     opencode
