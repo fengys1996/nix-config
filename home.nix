@@ -69,6 +69,15 @@ in {
   xdg.configFile."xkb/symbols/swap_esc_tilde".source = ./dot/xkb/symbols/swap_esc_tilde;
   xdg.configFile."xkb/symbols/esdf_arrows".source = ./dot/xkb/symbols/esdf_arrows;
   xdg.configFile."xkb/rules/evdev".source = ./dot/xkb/rules/evdev;
+
+  home.file.".cargo/config.toml".text = ''
+    [target.x86_64-unknown-linux-gnu]
+    linker = "clang"
+    rustflags = [
+        "-C", "link-arg=-fuse-ld=mold",
+        "-C", "link-arg=-Wl,--no-rosegment",
+    ]
+  '';
   
   xdg.configFile."rad".source = ./dot/rad;
 
@@ -239,5 +248,8 @@ in {
     vscode
     go
     waybar
+    perf
+    cargo-flamegraph
+    mold
   ];
 }
