@@ -160,9 +160,6 @@ in {
     ];
   };
   
-  home.file.".local/share/nvim/site/parser/rust.so".source =
-    "${pkgs.tree-sitter-grammars.tree-sitter-rust}/parser";
-
   programs.git = {
     enable = true;
 
@@ -253,5 +250,6 @@ in {
     cargo-flamegraph
     mold
     broot
+    tree-sitter
   ];
 }
