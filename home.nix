@@ -183,6 +183,7 @@ in {
   };
   
   home.packages = with pkgs; [
+    nodejs_24
     gnumake
     file
     rustup
@@ -251,5 +252,6 @@ in {
     perf
     cargo-flamegraph
     mold
+    broot
   ];
 }
