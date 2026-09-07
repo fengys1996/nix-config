@@ -251,5 +251,6 @@ in {
     mold
     broot
     tree-sitter
+    libreoffice
   ];
 }
