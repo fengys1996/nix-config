@@ -128,8 +128,13 @@
   users.users."fys" = {
     isNormalUser = true;
     description = "fys";
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [ "wheel" "docker" "wireshark" ];
     packages = with pkgs; [];
+  };
+
+  programs.wireshark = {
+    enable = true;
+    package = pkgs.wireshark;
   };
 
   # List packages installed in system profile. To search, run:
