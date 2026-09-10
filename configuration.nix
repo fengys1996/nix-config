@@ -38,6 +38,7 @@
       "feishu-cli"
       "obsidian"
       "vscode"
+      "wpsoffice"
     ];
 
   # Bootloader.

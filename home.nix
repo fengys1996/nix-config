@@ -252,5 +252,6 @@ in {
     broot
     tree-sitter
     libreoffice
+    wpsoffice
   ];
 }
