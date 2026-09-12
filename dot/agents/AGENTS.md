@@ -4,6 +4,9 @@
 - Prefer designs aligned with A Philosophy of Software Design.
 - Do not modify code before presenting a design and obtaining approval.
 - After approval, split work into small, incremental tasks.
+- Prefer early returns and guard clauses to keep control flow flat.
+  Organize code from high-level intent to implementation details so it
+  reads naturally from top to bottom.
 
 # Documentation
 
