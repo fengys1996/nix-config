@@ -167,13 +167,18 @@ in {
       user = {
         name = "fys";
         email = "fengys1996@gmail.com";
+        signingkey = "~/.ssh/id_ed25519.pub";
+      };
+      gpg = {
+        format = "ssh";
+      };
+      commit = {
+        gpgsign = true;
       };
     };
   };
   
   home.sessionVariables = {
-    # GTK_IM_MODULE = "fcitx";
-    # QT_IM_MODULE = "fcitx";
     XMODIFIERS = "@im=fcitx";
     EDITOR = "nvim";
     VISUAL = "nvim";
