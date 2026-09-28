@@ -258,5 +258,8 @@ in {
     tree-sitter
     libreoffice
     wpsoffice
+    isync
+    notmuch
+    neomutt
   ];
 }
