@@ -6,6 +6,7 @@ let
   );
 in {
   imports = [
+    ./modules/plannotator.nix
     # TODO: auto install rad
     # TODO: add rad.toml config
     ./services/rad.nix
@@ -24,6 +25,11 @@ in {
   home.username = "fys";
   home.homeDirectory = "/home/fys";
   home.stateVersion = "25.05";
+
+  # Install Plannotator and link its four core skills into ~/.agents/skills/
+  # for Codex, OpenCode, and Pi.
+  # Nix manages both the binary and skills; the version is set in pkgs/plannotator.nix.
+  programs.plannotator.enable = true;
   
   home.activation.bootstrapNvimConfig = lib.hm.dag.entryAfter ["writeBoundary"] ''
     set -e
