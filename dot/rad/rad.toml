@@ -7,7 +7,7 @@
 # PATH.
 #
 # For example:
-lsp_server_path = "/home/fys/.local/bin/rust-analyzer"
+lsp_server_path = "/home/fys/.local/share/nvim/mason/bin/rust-analyzer"
 
 # Extra directories to prepend to PATH when starting LSP servers(Optional).
 #
