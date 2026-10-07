@@ -8,15 +8,6 @@
   Organize code from high-level intent to implementation details so it
   reads naturally from top to bottom.
 
-# Documentation
-
-- For external libraries and frameworks, prefer Context7 documentation over
-  model knowledge.
-- Use Context7 whenever API details, examples, or version-specific behavior
-  may matter.
-- If Context7 is unavailable or lacks relevant information, state that 
-  explicitly and fall back to other sources.
-
 # Rust
 
 Prefer rtk over direct cargo commands:
