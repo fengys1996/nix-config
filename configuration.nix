@@ -199,7 +199,18 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    openFirewall = false;
+  };
+
+  networking.nftables.enable = true;
+  networking.firewall = {
+    enable = true;
+    extraInputRules = ''
+      ip saddr 192.168.0.0/16 tcp dport 22 accept
+    '';
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
