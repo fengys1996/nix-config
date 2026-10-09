@@ -7,6 +7,7 @@ let
 in {
   imports = [
     ./modules/plannotator.nix
+    ./modules/lark-cli.nix
     # TODO: auto install rad
     # TODO: add rad.toml config
     ./services/rad.nix
@@ -30,6 +31,14 @@ in {
   # for Codex, OpenCode, and Pi.
   # Nix manages both the binary and skills; the version is set in pkgs/plannotator.nix.
   programs.plannotator.enable = true;
+
+  programs.lark-cli = {
+    enable = true;
+    skills = {
+      enable = true;
+      autoUpdate.enable = true;
+    };
+  };
   
   home.activation.bootstrapNvimConfig = lib.hm.dag.entryAfter ["writeBoundary"] ''
     set -e
@@ -248,7 +257,6 @@ in {
         done
       '';
     }))
-    feishu-cli
     codex
     opencode
     pi-coding-agent
