@@ -101,11 +101,7 @@ in {
     interactiveShellInit = builtins.readFile ./dot/fish/config.fish;
   };
 
-  programs.tmux = {
-    enable = true;
-    shell = "${pkgs.fish}/bin/fish";
-    extraConfig = builtins.readFile ./dot/tmux/.tmux.conf;
-  };
+  home.file.".tmux.conf".source = ./dot/tmux/.tmux.conf;
 
   programs.zellij.enable = true;
   xdg.configFile."zellij".source = ./dot/zellij;
@@ -200,6 +196,7 @@ in {
   };
   
   home.packages = with pkgs; [
+    tmux
     nodejs_24
     gnumake
     file
