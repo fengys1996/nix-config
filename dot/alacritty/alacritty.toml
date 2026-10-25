@@ -52,3 +52,5 @@ import = [
 ]
 
 [terminal]
+# Enable OSC 52 clipboard access only in trusted environments.
+osc52 = "CopyPaste"
