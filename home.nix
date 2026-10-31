@@ -101,6 +101,12 @@ in {
     interactiveShellInit = builtins.readFile ./dot/fish/config.fish;
   };
 
+  programs.direnv = {
+    enable = true;
+    enableFishIntegration = true;
+    nix-direnv.enable = true;
+  };
+
   home.file.".tmux.conf".source = ./dot/tmux/.tmux.conf;
 
   programs.zellij.enable = true;
