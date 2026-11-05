@@ -11,6 +11,7 @@ in {
     # TODO: auto install rad
     # TODO: add rad.toml config
     ./services/rad.nix
+    ./services/orbit-worker.nix
   ];
 
   home.pointerCursor = {
