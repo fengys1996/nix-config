@@ -1,3 +1,4 @@
+data_home = "/home/fys/.local/state/orbit"
 [worker]
 max_concurrent_runs = 1
 # Omit run_timeout_seconds for no per-turn time limit.
