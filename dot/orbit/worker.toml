@@ -1,22 +1,19 @@
 data_home = "/home/fys/.local/state/orbit"
+
 [worker]
+id = "home-desktop"
 max_concurrent_runs = 1
-# Omit run_timeout_seconds for no per-turn time limit.
 
 [database]
-# Use absolute paths: Home Manager links this file into the Nix store.
 path = "/home/fys/.local/state/orbit/worker.sqlite"
 
 [codex]
-# The user service includes Home Manager packages in PATH.
 executable = "codex"
 rpc_timeout_seconds = 30
 
 [server]
 url = "ws://192.168.2.1:18080/api/worker/ws"
 allow_insecure_lan = true
-# Provision separately with mode 0600; never put credentials in this repository.
-token_file = "/home/fys/.config/orbit/worker.token"
 
 [directories]
 allowed_dirs = ["/home/fys/projects"]
