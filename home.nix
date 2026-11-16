@@ -279,5 +279,6 @@ in {
     isync
     notmuch
     neomutt
+    chromium
   ];
 }

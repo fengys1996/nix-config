@@ -11,6 +11,10 @@ path = "/home/fys/.local/state/orbit/worker.sqlite"
 executable = "codex"
 rpc_timeout_seconds = 30
 
+[pi]
+executable = "/home/fys/.nix-profile/bin/pi"
+rpc_timeout_seconds = 30
+
 [server]
 url = "ws://192.168.2.1:18080/api/worker/ws"
 allow_insecure_lan = true
