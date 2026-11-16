@@ -235,6 +235,7 @@ in {
     wl-clipboard
     nerd-fonts.monaspace
     nerd-fonts.intone-mono
+    paper-mono
     lxgw-wenkai
     docker-compose
     mariadb.client
