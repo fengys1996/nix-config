@@ -142,6 +142,8 @@ in {
 
   xdg.configFile."wofi".source = ./dot/wofi;
 
+  xdg.dataFile."applications/orbit.desktop".source = ./dot/applications/orbit.desktop;
+
   xdg.configFile."foot".source = ./dot/foot;
 
   programs.yazi = {

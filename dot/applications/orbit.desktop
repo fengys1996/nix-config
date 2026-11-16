@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Orbit
+Comment=Orbit task workspace
+Exec=chromium --app=http://192.168.2.1:18080
+Icon=chromium
+Terminal=false
+Categories=Development;
