@@ -10,6 +10,23 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+  # Replace runtime references without recompiling json-c consumers.
+  system.replaceDependencies.replacements = [
+    {
+      oldDependency = pkgs.json_c;
+      newDependency = pkgs.json_c.overrideAttrs (old: {
+        patches = (old.patches or []) ++ [
+          # Remove when nixpkgs includes the json-c 0.19 release-build leak fix.
+          # https://github.com/NixOS/nixpkgs/pull/586077
+          (pkgs.fetchpatch {
+            url = "https://github.com/json-c/json-c/commit/f291fa81c6f21d925ea771a8cca597f5886309cc.patch";
+            hash = "sha256-ZffSw1pfEfOH2ylRpJShdx7sTQR2nmPM/JIj/26UrDM=";
+          })
+        ];
+      });
+    }
+  ];
+
   # home-manager.users.fys = import ./home.nix;
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
