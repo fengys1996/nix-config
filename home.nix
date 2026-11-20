@@ -127,6 +127,7 @@ in {
       isDefault = true;
 
       settings = {
+        # 0 = use the fonts selected in Firefox settings, 1 = allow pages to choose their own fonts.
         "browser.display.use_document_fonts" = 0;
         "font.language.group" = "x-western";
         "layout.css.devPixelsPerPx" = "-1.0";
@@ -235,7 +236,7 @@ in {
     wl-clipboard
     nerd-fonts.monaspace
     nerd-fonts.intone-mono
-    paper-mono
+    source-code-pro
     lxgw-wenkai
     docker-compose
     mariadb.client
