@@ -1,8 +1,8 @@
 data_home = "/home/fys/.local/state/orbit"
 
 [worker]
-id = "home-desktop"
-max_concurrent_runs = 1
+id = "home-desktop-mini"
+max_concurrent_runs = 10
 
 [database]
 path = "/home/fys/.local/state/orbit/worker.sqlite"
@@ -21,3 +21,6 @@ allow_insecure_lan = true
 
 [directories]
 allowed_dirs = ["/home/fys/projects"]
+
+[logging]
+stdout = true

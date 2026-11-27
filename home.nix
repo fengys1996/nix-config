@@ -284,5 +284,6 @@ in {
     notmuch
     neomutt
     chromium
+    bubblewrap
   ];
 }

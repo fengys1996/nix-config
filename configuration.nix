@@ -62,6 +62,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.tmp.cleanOnBoot = true;
   
   programs.nix-ld.enable = true;
 
