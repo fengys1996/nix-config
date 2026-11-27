@@ -9,7 +9,7 @@
     min-height: 0;
     border-radius: 5px;
     border: none;
-    font-family: "MonaspiceKr Nerd Font";
+    font-family: "intel one mono nerd font";
     box-shadow: none;
     text-shadow: none;
     transition-duration: 0s;
@@ -17,7 +17,11 @@
 
 window#waybar {
     color: @bar-foreground;
-    background: @bar-background;
+    background: alpha(@bar-background, 0.99);
+}
+
+window#waybar.monitor-4k {
+    font-size: 80%;
 }
 
 window#waybar.monitor-1080p {
